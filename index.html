@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luna's SandBox : Homepage</title>
+    <meta name="description" content="Welcome to Luna's Sandbox Homepage, where she'll share all the things she likes!">
+    <style>
+            @import url('https://fonts.googleapis.com/css?family=Manjari:100,400,700&display=swap');
+            @import url('css/style.css');
+    </style> 
+</head>                    
+<body>
+    
+    <header>
+        <div></div>
+        <nav>
+            <h1>Luna's SandBox.</h1>
+            <ul>
+                <li><a href="#playlist">Playlists</a></li>
+                <li><a href="#improveIt">Improve it!</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <nav id="carousel">
+            <ul>
+                <li>
+                    <article>
+                        <img src="picture/carousel/carousel-image-1.jpg" alt="carousel-image-1">
+                        <h2>
+                            Lorem ipsum dolor sit amet consectetur 
+                            deserunt fuga dolores amet itaque?
+                        </h2>
+                        Lorem ipsum dolor sit amet consectetur 
+                        adipisicing elit. Explicabo 
+                        consequatur enim delectus.
+                    </article>
+                </li>
+
+                <li id="toMove">
+                    <article>
+                        <img src="picture/carousel/carousel-image-2.jpg" alt="carousel-image-2">
+                        <h2>
+                            Lorem ipsum dolor sit amet consectetur 
+                            deserunt fuga dolores amet itaque?
+                        </h2>
+                        Lorem ipsum dolor sit amet consectetur 
+                        adipisicing elit. Explicabo 
+                        consequatur enim delectus.
+                    </article>
+                </li>
+
+                <li id="toMove2">
+                    <article>
+                        <img src="picture/carousel/carousel-image-3.jpg" alt="carousel-image-2">
+                        <h2>
+                            Lorem ipsum dolor sit amet consectetur 
+                            deserunt fuga dolores amet itaque?
+                        </h2>
+                        Lorem ipsum dolor sit amet consectetur 
+                        adipisicing elit. Explicabo 
+                        consequatur enim delectus.
+                    </article>
+                </li>
+
+            </ul>
+            <button id="nextSlide">
+                <img src="picture/next-white-arrow.png" alt="Next">
+            </button>
+            <button id="prevSlide">
+                <img src="picture/prev-white-arrow.png" alt="Prev.">
+            </button>
+            <a href="#playlist">
+                <img src="picture/down-white-arrow.png" alt="next section">
+            </a>
+        </nav>
+
+        <section id="playlist">
+            <h2>Luna's Sandbox, discover best playlist for your kid!</h2>
+            <ul>
+                <li>
+                    <a href="https://www.youtube.com/watch?v=020g-0hhCAU&list=PL9d4tuTjeVmDRdR7uA0Dxr_LLf-FBlmgE" target="_blank">
+                        <div>Top discover</div>
+                        <img src="picture/playlist/playlist-1.jpg" alt="First playlist">
+                        <article>
+                            <h3>Lorem ipsum dolor sit amet.</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur, 
+                                adipisicing elit. Porro cupiditate earum 
+                                deleniti.
+                            </p>
+                        </article>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.youtube.com/watch?v=edSIuw4KBlc&list=PL8Mfzkj8FPJsRvxcynbexhk1OGfhtr6ZQ" target="_blank">
+                        <div>To discover</div>
+                        <img src="picture/playlist/playlist-2.jpg" alt="Second playlist">
+                        <article>
+                                <h3>Lorem ipsum dolor sit amet.</h3>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur, 
+                                    adipisicing elit. Porro cupiditate earum 
+                                    deleniti.
+                                </p>
+                        </article>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.youtube.com/watch?v=AYD8rgCBmbo&list=PLGKE1xAVFZ9hxerfoHFAIkgO_P6HPCZU7" target="_blank">
+                        <div>Top discover</div>
+                        <img src="picture/playlist/playlist-3.jpg" alt="Third playlist">
+                        <article>
+                            <h3>Lorem ipsum dolor sit amet.</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur, 
+                                adipisicing elit. Porro cupiditate earum 
+                                deleniti.
+                            </p>
+                        </article>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <section id="improveIt">
+            <h2>Help us improve this experience</h2>
+            <form action="index.html#improveIt">
+                <label>
+                        <input type="email" name="email" placeholder="@*" required maxlength="70">
+                </label>
+
+                <label>
+                        <input type="text" name="name" placeholder="Your name*" required maxlength="50">
+                </label>
+
+                <label >
+                    <select name="title" required>
+                        <option selected disabled value="">What is the purpose of your message*</option>
+                        <option value="improve">Improve experience</option>
+                        <option value="share">Share opinion</option>
+                        <option value="feedback">Experience feedback</option>
+                    </select>
+                </label>
+
+                <label>
+                    <textarea name="message" cols="30" rows="10" placeholder="Here your message*" required></textarea>
+                </label>
+
+                <button type="submit">Send</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="playlist.html">Playlists</a></li>
+                <li><a href="feedback.html">Feedbacks</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="politic.html">Politics</a></li>
+                <li><a href="legal.html">Legal</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">Back to top</a></li>
+                <li><a href="https://www.youtube.com/" target="_blank">Follow us on youtube!</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+</body>
+</html>

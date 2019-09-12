@@ -1,0 +1,497 @@
+/* Variables */
+:root {
+    --main-color: #FFB347;
+    --second-color: #5AC6C6;
+  }
+
+/* Keyframes */
+@keyframes colorPop{
+    from{
+        width: 0;
+    }
+    to{
+        width: 332px;
+    }
+}
+
+@keyframes blinkingArrow{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
+@keyframes carouselSlidePop{
+    0%{
+        left: -5000px;
+    }
+    10%{
+        left: 0;
+    }
+    50%{
+        left: 0;
+    }
+    60%{
+        left: -5000px;
+    }
+    100%{
+        left: -5000px;
+    }
+}
+
+/* Here we put the reset*/
+*{
+    font-family: 'Manjari', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+a, a:visited{
+    color: black;
+    text-decoration: none;
+}
+
+ul li{
+    list-style-type: none;
+}
+
+h1, h2, h3{
+    font-weight: 800;
+}
+
+h1{
+    font-size: 2rem;
+    color: white;
+    letter-spacing: 1px;
+}
+
+h2{
+    font-size: 1.5rem;
+}
+
+h3{
+    font-size: 1.2rem;
+}
+
+article, p{
+    font-size: 1rem;
+}
+
+button, input, textarea{
+    border: none;
+    background-color: transparent;
+    display: block;
+}
+
+button{
+    cursor: pointer;
+}
+
+textarea{
+    resize: none;
+}
+
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* Here we put the header's style */
+header{
+    width: 100%;
+    padding: 35px;
+    position: relative;
+}
+
+header div{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: var(--main-color);
+    z-index: -1;
+    animation: colorPop 700ms ease-in-out 1s 1 alternate forwards;
+}
+
+header nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav ul li{
+    display: inline;
+    margin: 0 12px;
+    text-transform: uppercase;
+    letter-spacing: .7px;
+}
+
+header nav ul li a, header nav ul li a:visited{
+    color: var(--main-color);
+    transition: color 500ms;
+}
+
+header nav ul li a:hover{
+    color: var(--second-color);
+}
+
+header nav ul li:last-of-type{
+    display: inline;
+    margin: 0 0 0 12px;
+}
+
+/*  General behavior */
+main{
+    padding: 0 35px;
+}
+
+main section h2{
+    padding: 35px 0;
+    color: var(--main-color);
+    text-align: center;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+/* carousel */
+main #carousel{
+    width: 100%;
+    height: calc(100vh - 108px);
+    position: relative;
+}
+
+main #carousel ul, main #carousel ul li, main #carousel ul li article{
+    height: 100%;
+}
+
+main #carousel ul #toMove, main #carousel ul #toMove2{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    left: -5000px;
+}
+
+main #carousel ul #toMove{
+    z-index: 1;
+    animation: carouselSlidePop 30s ease-in-out 1s infinite reverse;
+}
+
+main #carousel ul #toMove2{
+    z-index: 2;
+    animation: carouselSlidePop 30s ease-in-out 10s infinite reverse;
+}
+
+main #carousel ul li article{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 0 15%;
+}
+
+main #carousel ul li article img{
+    position: absolute;
+    width: calc(100% + 70px);
+    height: 100%;
+    top: 0;
+    left: -35px;
+    z-index: -1;
+    object-fit: cover;
+    filter: brightness(80%);
+}
+
+main #carousel ul li article h2, main #carousel ul li article{
+    color: white;
+    text-align: center;
+}
+
+main #carousel ul li article h2{
+    margin-bottom: 25px;
+}
+
+main #carousel button{
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%);
+    width: 20px;
+    z-index: 3;
+}
+
+main #carousel #nextSlide{
+    right: 35px;
+}
+
+main #carousel #prevSlide{
+    left: 35px;
+}
+
+main #carousel button img{
+    width: 100%;
+}
+
+main #carousel a{
+    position: absolute;
+    bottom: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    z-index: 3;
+}
+
+main #carousel a img{
+    width: 35px;
+    animation: blinkingArrow 1s linear 1s infinite alternate;
+}
+
+/* Playlist */
+main #playlist ul{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin-bottom: 35px;
+}
+
+main #playlist ul li{
+    width: calc((100% / 3) - 20px);
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+main #playlist ul li div{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 4px 0;
+    background-color: rgba(90, 198, 198, .7);
+    color: white;
+    text-align: center;
+    z-index: 1;
+}
+
+main #playlist ul li img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 18px;
+    filter: brightness(85%);
+    transition: filter 700ms;
+}
+
+main #playlist ul li a:hover img{
+    filter: brightness(100%);
+}
+
+main #playlist ul li article{
+    padding: 25px 0;
+}
+
+main #playlist ul li article h3{
+    margin-bottom: 20px;
+    color: var(--second-color);
+}
+
+/* Contact */
+main #improveIt h2::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 25%;
+    height: 1px;
+    background-color: var(--second-color);
+}
+
+main #improveIt form{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    width: 880px;
+    margin: 0 auto;
+}
+
+main #improveIt form label{
+    width: (50% - 20px);
+    margin-bottom: 25px;
+}
+
+main #improveIt form label:nth-of-type(3), select, main #improveIt form label:last-of-type{
+    width: 100%;
+}
+
+main #improveIt form label input, main #improveIt form label textarea{
+    width: 100%;
+    padding: 4px 0;
+    border-bottom: 1px solid #000;
+}
+
+main #improveIt form label input:focus, main #improveIt form label textarea:focus{
+    border-bottom: 1px solid var(--second-color);
+}
+
+main #improveIt form button[type=submit]{
+    padding: 4px 15px;
+    margin: 0 auto;
+    color: var(--main-color);
+    position: relative;
+    transition: color 600ms;
+}
+
+main #improveIt form button[type=submit]::before{
+    content:"";
+    background-color: var(--second-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    transition: width 600ms;
+    z-index: -1;
+}
+
+main #improveIt form button[type=submit]::after{
+    content:"";
+    background-color: var(--main-color);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 1px;
+    transition: width 600ms;
+    transition-timing-function: ease-in-out;
+    z-index: 1;
+}
+
+main #improveIt form button[type=submit]:hover{
+    color: white;
+}
+
+main #improveIt form button[type=submit]:hover::before{
+    width: 100%;
+}
+
+main #improveIt form button[type=submit]:hover::after{
+    width: 0;
+}
+
+/* Footer */
+footer{
+    width: 100%;
+    padding: 35px;
+    margin-top: 35px;
+    border-top: 1px solid var(--second-color);
+}
+
+footer nav{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+footer nav ul:first-of-type{
+    display: flex;
+    flex-flow: column wrap;
+    max-height: 100px;
+    max-width: 50%;
+    justify-content: flex-start;
+}
+
+footer nav ul li{
+    margin: 0 0 10px 0;
+}
+
+footer nav ul:first-of-type li{
+    margin: 0 20px 10px 0;
+}
+
+/* Media queries */
+@media screen and (max-width: 950px){
+    /* Keyframes */
+    @keyframes colorPop{
+        from{
+            width: 0;
+        }
+        to{
+            width: 233px;
+        }
+    }
+
+    /* General */
+    body{
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    h1{
+        font-size: 1.3rem;
+    }
+
+    /* header */
+    header {
+        padding: 15px 35px;
+    }
+
+    header nav ul{
+        background-image: url('../picture/menu.png');
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+        position: relative;
+    }
+
+    header nav ul li{
+        position: absolute;
+        display: block;
+        margin: 0;
+        padding: 15px 35px;
+        background-color: white;
+        right: -235px;
+        width: 200px;
+        z-index: 4;
+        transition: right 700ms;
+    }
+
+    header nav ul li:first-of-type{
+        bottom: -63px;
+    }
+
+    header nav ul li:last-of-type{
+        bottom: -111px;
+    }
+
+    header nav ul:hover li{
+        right: -35px;
+    }
+
+    /* carousel */
+    main #carousel{
+        height: calc(100vh - 62px);
+    }
+
+    /* Playlist */
+    main #playlist ul{
+        justify-content: center;
+    }
+
+    main #playlist ul li{
+        width: 250px;
+        margin: 0 auto 20px;
+    }
+
+    main #playlist ul li img{
+        height: 250px;
+    }
+
+    /* Improve it*/
+    main #improveIt form{
+        width: 100%;
+    }
+}
